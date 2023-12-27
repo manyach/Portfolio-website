@@ -1,0 +1,360 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+    background-color: #ECF8F8;
+    margin: 0;
+    
+}
+
+
+/* Navigation styles */
+
+.navbar {
+  background-color: #B2967D;
+  color: #fff;
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 40px;
+}
+
+.nav-list {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-grow: 1;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-list li {
+  margin-left: 20px;
+}
+
+.nav-list a {
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.3s;
+}
+
+.nav-icon {
+  width: 30px;
+  height: 3px;
+  background-color: #fff;
+  margin: 4px 0;
+  transition: background-color 0.3s;
+  display: none;
+}
+
+.nav-toggle {
+  cursor: pointer;
+  display: none;
+}
+
+
+/*home section*/
+
+#home .centered-image {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+  z-index: 1;
+}
+
+#home .tagline {
+  font-size: 2rem;
+  color: #555;
+  margin-bottom: 1.5rem;
+  font-style: italic;
+  text-align: center;
+}
+
+#home .artist-name {
+  font-weight: bold;
+  font-size: 3rem;
+  margin-top: 1.5rem;
+  color: #333;
+  text-align: center;
+}
+
+/*about section*/
+
+#about h2 {
+  font-size: 3rem;
+  margin-bottom: 3rem;
+}
+
+#about p {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+/* Timeline section */
+
+.timeline {
+  display: flex; /* Display the timeline cards side by side */
+  justify-content: space-between; /* Distribute space between cards */
+  flex-wrap: wrap; /* Allow cards to wrap to the next row */
+}
+
+.timeline-card {
+  width: calc(33.33% - 20px); /* Adjust card width */
+  margin-bottom: 20px; /* Add spacing between rows */
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #FFF;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.timeline-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.timeline-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.timeline-card-content {
+  display: none;
+    padding: 10px;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 0 0 10px 10px;
+    transition: opacity 0.3s;
+}
+
+.timeline-card:hover .timeline-card-content {
+  display: block;
+  opacity: 1;
+}
+
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  
+  
+  .nav-list {
+      display: none;
+      position: absolute;
+      top: 60px;
+      right: 0;
+      width: 100%;
+      background-color: #B2967D;
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .nav-list.expanded {
+      display: flex;
+  }
+
+  .nav-icon {
+      display: block;
+      margin-right: 20px;
+  }
+
+  .nav-toggle {
+      display: block;
+  }
+
+  .section {
+      padding: 20px;
+  }
+
+  #about h2 {
+      font-size: 2.5rem;
+  }
+
+  #about p {
+      font-size: 1rem;
+  }
+
+  #home .tagline {
+      font-size: 1.5rem;
+  }
+
+  #home .artist-name {
+      font-size: 2.5rem;
+  }
+
+  .timeline-card {
+      flex: 100%;
+  }
+  .timeline-card-content {
+    position: static;
+    background-color: transparent;
+    border-radius: 10px;
+    opacity: 1;
+    display: block;
+  }
+  .timeline-card {
+    box-shadow: none; /* Remove box shadow on small screens */
+  }
+
+  .timeline-card:hover {
+    transform: none; /* Disable hover scaling on small screens */
+  }
+}
+
+
+.section {
+  background-color: #EEE4E1;
+  padding: 70px; /* Increased padding for better spacing */
+  border-radius: 10px;
+  width: 100%; /* Full width */
+  max-width: 1200px; /* Limit the maximum width for better readability */
+  margin: 40px auto; /* Center the section horizontally */
+}
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+  .section {
+      padding: 20px; /* Reduced padding for smaller screens */
+  }
+
+}
+.carousel-container {
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+}
+    
+.carousel-track {
+    display: flex;
+    animation: scroll 12s linear infinite; /* Adjust timing as needed */
+}
+    
+.carousel-slide {
+    flex: 0 0 50.666%; /* 100% / 6 images = 16.666% */
+    padding: 0 0.5rem;
+    animation: slide-in 14s ease-in-out infinite alternate; /* Adjust timing as needed */
+}
+    
+.carousel-slide img {
+    max-width: 60%; /* Adjust this value to control the image size */
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+/* Center-align the achievement heading */
+h2 {
+    text-align: center;
+}
+
+/* Center-align the event section */
+#events h2 {
+    text-align: center;
+}
+
+/* Style the event gallery */
+.event-gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Create a grid with 4 columns */
+    grid-gap: 10px; /* Adjust spacing between images */
+    margin-top: 20px;
+}
+
+.event-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+
+
+
+
+
+/* Keyframes for the continuous scrolling animation */
+@keyframes scroll {
+0% {
+transform: translateX(0);
+}
+100% {
+transform: translateX(-100%);
+}
+}
+
+/* Remove the default carousel indicators and controls */
+#achievementsCarousel .carousel-indicators,
+#achievementsCarousel .carousel-control-prev,
+#achievementsCarousel .carousel-control-next {
+display: none;
+}
+
+
+.carousel-track {
+  display: flex;
+  animation: scroll 12s linear infinite; /* Adjust timing as needed */
+}
+
+.carousel-slide {
+  flex: 0 0 50.666%; /* 100% / 6 images = 16.666% */
+  padding: 0 0.5rem;
+  animation: slide-in 14s ease-in-out infinite alternate; /* Adjust timing as needed */
+}
+
+.carousel-slide img {
+  max-width: 60%; /* Adjust this value to control the image size */
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+  .carousel-track {
+      animation: scroll-small 12s linear infinite; /* Updated animation for small screens */
+  }
+
+  .carousel-slide {
+      animation: slide-in-small 14s ease-in-out infinite alternate; /* Updated animation for small screens */
+  }
+}
+
+/* Keyframes for the continuous scrolling animation on small screens */
+@keyframes scroll-small {
+  0% {
+      transform: translateX(0);
+  }
+  100% {
+      transform: translateX(-100%);
+  }
+}
+
+
+
+/* Footer styles */
+.footer {
+  background-color: #B2967D;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.footer p {
+  margin: 0;
+}
